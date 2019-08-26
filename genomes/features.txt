@@ -1,0 +1,8 @@
+CDS
+Selenocysteine
+UTR
+exon
+gene
+start_codon
+stop_codon
+transcript
