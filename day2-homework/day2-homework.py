@@ -8,7 +8,7 @@ for line in (sys.stdin):
         continue
     #eliminate the whitespace and returns   
     fields = line.rstrip("\n").split()
-    #count the columns backwords because the first two columns are not always filled in so it may assume that one less column    
+    #count the columns backwords because the first two columns are not always filled in so it may assume that it has one less column    
     uniprot = fields[-2]
     flybase = fields[-1]
     
