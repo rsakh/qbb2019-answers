@@ -1,13 +1,13 @@
-total 32078056
+total 32078584
 -rw-r--r--@ 1 cmdb  staff         609 Aug 27 13:29 README.md
 -rw-r--r--  1 cmdb  staff         983 Aug 27 12:36 SRR072893.10k
--rw-r--r--  1 cmdb  staff      443412 Aug 27 12:40 SRR072893.10k.bam
--rw-r--r--  1 cmdb  staff      132360 Aug 27 12:42 SRR072893.10k.bam.bai
--rw-r--r--  1 cmdb  staff     1991262 Aug 27 11:44 SRR072893.10k.fastq
--rw-r--r--  1 cmdb  staff    31572067 Aug 27 14:13 SRR072893.10k.gtf
--rw-r--r--  1 cmdb  staff     1821748 Aug 27 12:31 SRR072893.10k.sam
--rw-r--r--@ 1 cmdb  staff      610311 Aug 27 11:52 SRR072893.10k_fastqc.html
--rw-r--r--  1 cmdb  staff      431319 Aug 27 11:52 SRR072893.10k_fastqc.zip
+-rw-r--r--  1 cmdb  staff      443430 Aug 27 14:20 SRR072893.10k.bam
+-rw-r--r--  1 cmdb  staff      132360 Aug 27 14:20 SRR072893.10k.bam.bai
+-rw-r--r--  1 cmdb  staff     1991262 Aug 27 14:18 SRR072893.10k.fastq
+-rw-r--r--  1 cmdb  staff    31572067 Aug 27 14:20 SRR072893.10k.gtf
+-rw-r--r--  1 cmdb  staff     1821748 Aug 27 14:20 SRR072893.10k.sam
+-rw-r--r--@ 1 cmdb  staff      610311 Aug 27 14:18 SRR072893.10k_fastqc.html
+-rw-r--r--  1 cmdb  staff      431319 Aug 27 14:18 SRR072893.10k_fastqc.zip
 -rw-r--r--  1 cmdb  staff   619810716 Aug 27 13:41 SRR072893.bam
 -rw-r--r--  1 cmdb  staff      240216 Aug 27 13:41 SRR072893.bam.bai
 -r--r--r--  1 cmdb  staff  4582672018 Aug 27 13:37 SRR072893.fastq
@@ -20,9 +20,9 @@ total 32078056
 -rw-r--r--  1 cmdb  staff   206553088 Aug 27 13:42 SRR072903.sam
 -r--------  1 cmdb  staff  2621440000 Aug 27 13:42 SRR072905.fastq
 -rwxr-xr-x@ 1 cmdb  staff         434 Aug 27 13:42 doRNA-seq.sh
--rw-r--r--  1 cmdb  staff     2154166 Aug 27 14:13 e2t.ctab
--rw-r--r--  1 cmdb  staff     5414339 Aug 27 14:13 e_data.ctab
--rw-r--r--  1 cmdb  staff     1745148 Aug 27 14:13 i2t.ctab
--rw-r--r--  1 cmdb  staff     2213702 Aug 27 14:13 i_data.ctab
--rw-r--r--  1 cmdb  staff           0 Aug 27 14:15 output
--rw-r--r--  1 cmdb  staff     2902447 Aug 27 14:13 t_data.ctab
+-rw-r--r--  1 cmdb  staff     2154166 Aug 27 14:20 e2t.ctab
+-rw-r--r--  1 cmdb  staff     5414339 Aug 27 14:20 e_data.ctab
+-rw-r--r--  1 cmdb  staff     1745148 Aug 27 14:20 i2t.ctab
+-rw-r--r--  1 cmdb  staff     2213702 Aug 27 14:20 i_data.ctab
+-rw-r--r--  1 cmdb  staff           0 Aug 27 14:21 output
+-rw-r--r--  1 cmdb  staff     2902447 Aug 27 14:20 t_data.ctab
