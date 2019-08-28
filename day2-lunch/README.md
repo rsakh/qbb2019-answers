@@ -20,3 +20,7 @@ ls -lR /Users/cmdb/qbb2019-answers/day2-lunch > output
 #Question 3
  (so you have to sort the gtf file and feed that into the cut function, where you just want to read the first column with the chromosome names, then you do uniq -c to group them so that you can count them in their corresponding groups/clusters. That is how you can calc how many alignments are on each chromosome)
 /Users/cmdb/qbb2019-answers/day2-lunch $ sort SRR072893.10k.gtf | cut -f 1 | uniq -c > lunchnumber3
+
+#question4
+lines with 12 columns have bad reads 
+lines with 20 or more columns have good reads that map well
