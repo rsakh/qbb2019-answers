@@ -50,15 +50,3 @@ print(type(line))
 fig.savefig("scatter.png")
 plt.close(fig)
 
-
-#
-# fig, ax = plt.subplots() #fig=the entire image, ax=subpanel, so plot two graphs in one image
-# ax.hist(my_data, bins=100, density=True) #default bins=10
-# ax.plot (x,y1, label="skew distribution")
-# ax.plot(x,y2, label="normal")
-# ax.legend()
-
-# plt.text(-15, 0.15, "mu=5.9, sigma=2.65, a=-1.9")
-
-# fig.savefig("fpkms1.png")
-# plt.close(fig)
