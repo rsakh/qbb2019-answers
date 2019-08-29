@@ -24,7 +24,8 @@ for i, line in enumerate(open(metadata)):
     df = pd.read_csv (ctab_path, sep="\t",index_col="t_name")
     if i == 1:
         fpkms["gene_name"] = df.loc[:,"gene_name"]
-    fpkms[(sex, stage)] = df.loc[:,"FPKM"]
+    fpkms[sex + '_' + stage]= df.loc[:,"FPKM"]
+    print( (sex, stage) )
 
 
 df_fpkms = pd.DataFrame(fpkms)
