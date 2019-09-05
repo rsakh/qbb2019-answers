@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+#help from TA Kate, Amanda, and Raquel
+#this was mad hard, yo
+
 from fasta import FASTAReader
 import sys
 
@@ -17,11 +20,12 @@ for ident, sequence in target:
     for j in range(0, len(sequence) - k +1): # groupings, math problems thing that siran showed me
         kmer = sequence[j:j+k]
         if kmer in target_dict:
-            target_dict[kmer].append((ident,j)) #if kmer is there, then you are going to add it into the dictionary, but if not there then what is the else doing?
+            target_dict[kmer].append((ident,j)) 
         else:
             target_dict[kmer]=[(ident,j)]
 # print(target_dict)
-
+i = 0
+j = 0
 for ident, sequence in query:
     sequence = sequence.upper()
     for i in range(0, len(sequence) - k +1):
@@ -30,28 +34,38 @@ for ident, sequence in query:
         if kmer in target_dict:
             for ident, j in target_dict[kmer]: #if the kmer is in the target dict then you want to extend it
                 target_seq = extender[ident] # I'm reassigning the target sequence dictionary here
-                target_length = len(target_seq) #defining a new input for target seq because for statement for query overrides the for statement for target seq?
+                target_length = len(target_seq) 
                 query_length = len(sequence) #query seq
 
                 extend_right = True #assigning the variable as True
                 extended_kmer = kmer
+                
 
                 while extend_right == True:
-                    if sequence[i+k+1] == target_seq[j+k+1]:
+                    if (j+k == target_length) or (i+k == query_length): #when we reach the end
+                        if ident in final_dict:
+                            final_dict[ident].append(extended_kmer) 
+                        else:
+                            final_dict[ident]=[(extended_kmer)] 
+                        break
+                        
+                    if sequence[i+k] == target_seq[j+k]:
                         i += 1
                         j += 1
-                        extended_kmer += sequence[i+k+1]
-
-                    elif (j+k == target_length) or (i+k == query_length): #this means that there isn't a matching base next to the kmer? or that it stops?
-                        final_dict[extended_kmer].append((ident), i)
-                        extend_right = False
+                        extended_kmer += sequence[i+k]
 
                     else:
-                        final_dict[extended_kmer].append((ident), i)
-                        extend_right = False # could write break instead, right?
+                        if ident in final_dict:
+                            final_dict[ident].append(extended_kmer)
+                        else:
+                            final_dict[ident]=[(extended_kmer)] 
                         break
-                print(final_dict[extender_kmer])
-        #final_dict[extended_kmer].append((ident), i)
-                #this is where i would add to my final dict where I would add my extention
-                #print (extended_kmer,i)
-                # print (ident, i)
+                        
+#turn all the values of the dictionary into a list   
+final_list= []
+for kmers in final_dict.values():
+   for seqs in kmers:
+       final_list.append(seqs)
+
+for kmer in sorted(final_list, key=len, reverse=True):
+   print (kmer, len(kmer))
