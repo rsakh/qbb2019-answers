@@ -1,0 +1,5 @@
+2 number of contigs
+100000.0 average
+4 n50
+100000 min
+4 max
