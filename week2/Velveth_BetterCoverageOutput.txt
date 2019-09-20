@@ -1,0 +1,5 @@
+12 number of contigs
+9096.454545454546 average
+14548 n50
+33235 min
+4 max

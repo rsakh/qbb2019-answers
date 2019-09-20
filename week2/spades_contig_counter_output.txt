@@ -1,0 +1,5 @@
+129 number of contigs
+389.2109375 average
+372 n50
+1737 min
+4 max

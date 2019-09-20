@@ -1,0 +1,5 @@
+306 number of contigs
+186.7967213114754 average
+243 n50
+998 min
+4 max
