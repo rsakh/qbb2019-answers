@@ -55,22 +55,22 @@ G1Efeature_plot.append(G1Eintron_count)
 #print (ERfeature_plot, G1Efeature_plot)
 x1= ["loss", "gain"]    
 fig, (ax1, ax2) = plt.subplots(ncols=2)
-ax1.bar(x1[0], loss_counter)
-ax1.bar(x1[1], gain_counter)
-ax1.set_ylabel("number of sites")
-ax1.set_title("CTCF binding after differentiation")
+ax2.bar(x1[0], loss_counter)
+ax2.bar(x1[1], gain_counter)
+ax2.set_ylabel("number of sites")
+ax2.set_title("CTCF binding after differentiation")
 
 
 width = 0.35
 x2 = ["promoter", "exon", "intron"]
 x = np.arange(len(x2))
-ax2.bar(x - width/2, G1Efeature_plot, width, label="G1E")
-ax2.bar(x + width/2, ERfeature_plot, width, label="ER")
-ax2.set_ylabel("number of sites")
-ax2.set_xticks(x)
-ax2.set_xticklabels(x2)
-ax2.set_title("Region of CTCF binding")
-ax2.legend()
+ax1.bar(x - width/2, G1Efeature_plot, width, label="G1E")
+ax1.bar(x + width/2, ERfeature_plot, width, label="ER")
+ax1.set_ylabel("number of sites")
+ax1.set_xticks(x)
+ax1.set_xticklabels(x2)
+ax1.set_title("Region of CTCF binding")
+ax1.legend()
 fig.tight_layout()
 
 fig.savefig( "Plot.png" )
