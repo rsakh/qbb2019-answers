@@ -1,0 +1,159 @@
+#!/usr/bin/env python3
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# #FOR NUMBER JUAN
+    # def fixation(n, p): #n is the number of alleles in the pop and p is the allele freq
+    #     fixation_time = 0
+    #     next_gen_alleles = np.random.binomial(n,p)
+    #     p = next_gen_alleles/n
+    #     while next_gen_alleles !=0 and next_gen_alleles !=n:
+    #         next_gen_alleles = np.random.binomial(n,p)
+    #         p = next_gen_alleles/n
+    #         fixation_time += 1
+    #     return fixation_time
+    # trial = fixation(200, .5)
+    # #print(trial)
+    #
+    # multi_trials= []
+    # for i in range(1000):
+    #     i=fixation(200, .5)
+    #     multi_trials.append(i)
+    #
+    # #print(multi_trials)
+    #
+    # fig, ax = plt.subplots()
+    # ax.hist(multi_trials)
+    # ax.set_xlabel("time to fixation",fontsize=16)
+    # ax.set_ylabel("how many times that happened",fontsize=16)
+    # fig.savefig("#1.png")
+    # plt.tight_layout()
+    # plt.close(fig)}
+
+
+# #FOR NUMBER TWO
+# n=200
+#
+# def fixation(n, p):
+#     fixation_time = 0
+#     next_gen_alleles = np.random.binomial(n,p)
+#     p = next_gen_alleles/n
+#     while next_gen_alleles !=0 and next_gen_alleles !=n:
+#         next_gen_alleles = np.random.binomial(n,p)
+#         p = next_gen_alleles/n
+#         fixation_time += 1
+#     return fixation_time
+# trial = fixation(n, .5)
+#
+# pop=[100, 1000, 5000, 10000, 50000, 100000, 500000]
+# #print(trial)
+#
+# avg_pops=[]
+# pop_num=[]
+#
+# for n in pop:
+#     pop_num.append(n)
+#     multi_trials =[]
+#     for j in range(10):
+#         # for i in range(10):
+#         i=fixation(n, .5)
+#         multi_trials.append(i)
+#     avg_trials_per_popsize = sum(multi_trials)/len(multi_trials)
+#     avg_pops.append(avg_trials_per_popsize)
+#         # n += 100
+#
+# #plt.plot(pop_num, avg_pops)
+# fig, ax = plt.subplots()
+# plt.plot(pop_num, avg_pops)
+# ax.set_xlabel("pop size",fontsize=16)
+# ax.set_ylabel("generation to fixation",fontsize=16)
+# ax.set_yscale("log")
+# plt.tight_layout()
+# fig.savefig("#2.png")
+# plt.close(fig)
+# #plt.show()
+# #print(multi_trials)
+
+
+# # FOR NUMBER 3
+# def fixation(n, p):
+#     fixation_time = 0
+#     next_gen_alleles = np.random.binomial(n,p)
+#     p = next_gen_alleles/n
+#     while next_gen_alleles !=0 and next_gen_alleles !=n:
+#         next_gen_alleles = np.random.binomial(n,p)
+#         p = next_gen_alleles/n
+#         fixation_time += 1
+#     return fixation_time
+# #trial = fixation(200, p)
+#
+#
+# #print(trial)
+# multi_trials =[]
+# p_freq=[]
+# avg_pops=[]
+# std_pops=[]
+# p=.01
+# for i in range(99):
+#     p_freq.append(p)
+#     for j in range(1000):
+#         i=fixation(200, p)
+#         multi_trials.append(i)
+#     avg_trials_per_pfreq = sum(multi_trials)/len(multi_trials)
+#     std_trials_per_pfreq = np.std(multi_trials)
+#     avg_pops.append(avg_trials_per_pfreq)
+#     std_pops.append(std_trials_per_pfreq)
+#     p+=.01
+#
+# # plt.plot(p_freq, avg_pops)
+# fig, ax = plt.subplots()
+# plt.errorbar(p_freq, avg_pops,yerr=std_pops)
+# ax.set_xlabel("allele freq",fontsize=16)
+# ax.set_ylabel("generation to fixation",fontsize=16)
+# plt.tight_layout()
+# fig.savefig("#3.png")
+# plt.close(fig)
+
+
+#Number 4
+
+def fixation(n, p, s):
+    fixation_time = 0
+    p = (p+(p*s))/(1+(p*s))
+    next_gen_alleles = np.random.binomial(n,p)
+    while next_gen_alleles !=0 and next_gen_alleles !=n:
+        next_gen_alleles = np.random.binomial(n,p)
+        p = next_gen_alleles/n
+        p = (p+(p*s))/(1+(p*s))
+        fixation_time += 1
+    return fixation_time
+#trial = fixation(200, .5, 0.1)
+
+#print(trial)
+multi_trials=[]
+avg_pops=[]
+std_pops=[]
+sel_coef=[]
+s=.01
+for i in range(99):
+    sel_coef.append(s)
+    for j in range(100):
+        i=fixation(200, .5, s)
+        multi_trials.append(i)
+    avg_trials_per_sel_coef = sum(multi_trials)/len(multi_trials)
+    std_trials_per_sel_coef = np.std(multi_trials)
+    avg_pops.append(avg_trials_per_sel_coef)
+    std_pops.append(std_trials_per_sel_coef)
+    s+=.01
+
+# plt.plot(p_freq, avg_pops)
+fig, ax = plt.subplots()
+plt.errorbar(sel_coef, avg_pops,yerr=std_pops)
+ax.set_xlabel("selection coefficient",fontsize=16)
+ax.set_ylabel("generation to fixation",fontsize=16)
+plt.tight_layout()
+fig.savefig("#4.png")
+plt.close(fig)
+
